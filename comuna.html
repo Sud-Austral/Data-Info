@@ -109,7 +109,24 @@
             text-align: center;
             text-decoration: none;
           }
+          /*estilos responsive iframe*/
+          .container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+          }
           
+          .responsive-iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+          }
         </style>
         <div class="col-6 col-md-2 my-auto">
           <a href="/index.html"><img class="img-fluid" src="/assets/cochamo/interior_logoclic.png" alt="logo dataintelligence"> </a> 
@@ -150,7 +167,7 @@
               <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#powerbi3" type="button" role="tab" aria-controls="powerbi3" aria-selected="false">powerbi3</button>
             </li>
              <li class="nav-item" role="presentation" style="background:#C0CBD1;">
-              <button class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#powerbi4" type="button" role="tab" aria-controls="powerbi4" aria-selected="false">Disabled</button>
+              <button class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#test1" type="button" role="tab" aria-controls="test1" aria-selected="false">test1</button>
             </li>
             <li class="nav-item" role="presentation" style="background:#C0CBD1;">
               <button class="nav-link" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="false">La Serena</button>
@@ -172,7 +189,10 @@
         <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0"> <div class="container-fluid">
             <div class="row justify-content-center">
                 <div class="col-12"> 
-                    <iframe loading="lazy" width="1475" height="615" class="text-center" src="https://sud-austral.github.io/MAPA_RELEASE/publicaciones2/recursoseinfraestructura/Index.html?CUT_COM=10103" title="mapa" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  <div class="container">
+                    <iframe loading="lazy" class="responsive-iframe" src="https://sud-austral.github.io/MAPA_RELEASE/publicaciones2/recursoseinfraestructura/Index.html?CUT_COM=10103" title="mapa" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  </div>
+                    
                 </div>
             </div>
         </div></div>
@@ -244,6 +264,16 @@
           <div class="row justify-content-center">
               <div class="col-12 text-center">
                   <iframe loading="lazy" width="1475" height="815" class="text-center" src="https://app.powerbi.com/view?r=eyJrIjoiOTdiNzI1ZjktZWM4MS00ODNiLTg3YmMtZDg1NzQ4ZmQ3MTM2IiwidCI6IjhmYmFhNWJmLTJlY2MtNGRjOC1iNTZiLThmOTJlMzA3ZjA3NiIsImMiOjR9&pageName=ReportSection" title="mapa" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+          </div>
+        </div>
+      
+        <div class="tab-pane fade" id="test1" role="tabpanel" aria-labelledby="test1" tabindex="0">
+          <div class="row justify-content-center">
+              <div class="col-12 text-center">
+                <div class="container"> 
+                  <iframe loading="lazy" class="responsive-iframe" src="https://sud-austral.github.io/MAPA_RELEASE/publicaciones2/recursoseinfraestructura/Index.html?CUT_COM=10103"></iframe>
+                </div>
               </div>
           </div>
         </div>
