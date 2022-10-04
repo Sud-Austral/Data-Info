@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1">
+    <title>Cochamó</title>
+    <!-- Favicon and Touch Icons -->
+    <link rel="stylesheet" href="/estilos.css">
+    <link href="/assets/favicon/Icono_dataIntelligence_Rojo.png" rel="shortcut icon" type="image/png">
+    <link href="/assets/favicon/Icono_dataIntelligence_Rojo.png" rel="apple-touch-icon">
+    <link href="/assets/favicon/Icono_dataIntelligence_Rojo.png" rel="apple-touch-icon" sizes="72x72">
+    <link href="/assets/favicon/Icono_dataIntelligence_Rojo.png" rel="apple-touch-icon" sizes="114x114">
+    <link href="/assets/favicon/Icono_dataIntelligence_Rojo.png" rel="apple-touch-icon" sizes="144x144">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!-- jquery para activar botones de menu-->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" type="text/css" rel="stylesheet">
+  </head>
+  <body style="overflow-x:hidden;">
+    <div class="container-fluid">
+      <div class="row justify-content-around" style="background:#5E348D;">
+        <div class="col-6 col-md-1">
+          <div class="row">
+            <div class="col-12">
+              <!--navbar lateral-->
+              <nav class="navbar navbar-dark">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#"></a>
+                  <button class="navbar-toggler" style="padding:0;" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+                    <img class=" img-fluid" src="/assets/cochamo/interior_iconomenu.png" alt="">
+                  </button>
+                  <div style="background-color:#c8b628!important;" class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+                    <div class="offcanvas-header">
+                      <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel"></h5>
+                      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body w-100">
+                      <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-success" type="submit">Search</button>
+                      </form>
+                      <ul class="nav nav-tabs pt-5" id="myTab" role="tablist" style="width: 100%; text-align: -webkit-center; display: inline-table; ">
+                        <li class="nav-item" role="presentation" style="width: inherit;" >
+                          <button style="width:inherit;color:black" class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Recursos e Infraestructura</button>
+                        </li>
+                        <li class="nav-item" role="presentation" >
+                          <button style="width: 100%!important; color:black" class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Gestión Territorial</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                          <button style="width: 100%!important; color:black" class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#profile-uso-Suelo" type="button" role="tab" aria-controls="profile-uso-Suelo" aria-selected="false">Usos del Suelo</button>
+                        </li>
+                         <li class="nav-item" role="presentation " >
+                          <button style="width: 100%!important; color:black" class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#Capas-Hidricas" type="button" role="tab" aria-controls="Capas-Hidricas" aria-selected="false">Capas Hídricas</button>
+                        </li>
+                        <li class="nav-item" role="presentation" >
+                          <button style="width: 100%!important; color:black" class="nav-link" id="home-tab" data-bs-toggle="tab" data-bs-target="#Humedales" type="button" role="tab" aria-controls="Humedales" aria-selected="false">Humedales</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                          <button style="width: 100%!important;color:black" class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#Glaciares" type="button" role="tab" aria-controls="Glaciares" aria-selected="false">Glaciares</button>
+                        </li>
+                        <li class="nav-item" role="presentation" style="width: inherit;">
+                          <button style="width: 100%!important;color:black" class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#Requisitos-BIP" type="button" role="tab" aria-controls="Requisitos-BIP" aria-selected="false">Requisitos BIP</button>
+                        </li>
+                         <li class="nav-item" role="presentation">
+                          <button style="width: 100%!important;color:black" class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#powerbi" type="button" role="tab" aria-controls="powerbi" aria-selected="false">powerbi</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                          <button style="width: 100%!important;color:black" class="nav-link" id="home-tab" data-bs-toggle="tab" data-bs-target="#powerbi1" type="button" role="tab" aria-controls="powerbi1" aria-selected="false">powerbi1</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                          <button style="width: 100%!important;color:black" class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#powerbi2" type="button" role="tab" aria-controls="powerbi2" aria-selected="false">powerbi2</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                          <button style="width: 100%!important;color:black" class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#powerbi3" type="button" role="tab" aria-controls="powerbi3" aria-selected="false">powerbi3</button>
+                        </li>
+                         <li class="nav-item" role="presentation">
+                          <button style="width: 100%!important;color:black" class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#test1" type="button" role="tab" aria-controls="test1" aria-selected="false">test1</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                          <button style="width: 100%!important;color:black" class="nav-link" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="false">La Serena</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                          <button style="width: 100%!important;color:black" class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Títulos de Merced</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                          <button style="width: 100%!important;color:black" class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Contact</button>
+                        </li>
+                         <li class="nav-item" role="presentation">
+                          <button style="width: 100%!important;color:black" class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#disabled-tab-pane" type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false">Disabled</button>
+                        </li>
+                      </ul>
+
+                    </div>
+                  </div>
+                </div>
+              </nav>
+            </div>
+          </div>
+          
+        </div>
+        <div class="col-6 col-md-2 my-auto">
+          <a href="/index.html"><img class="img-fluid" src="/assets/cochamo/interior_logoclic.png" alt="logo dataintelligence"> </a> 
+        </div>
+        <div class="col-12 col-md-8">
+          <div class="w-100 mt-md-5">
+            <div class="scroller scroller-left float-left mt-2"><i class="fa fa-chevron-left"></i></div>
+            <div class="scroller scroller-right float-right mt-2"><i class="fa fa-chevron-right"></i></div>
+            <div class="wrapper-nav">
+              <nav class="nav nav-tabs list" id="myTab" role="tablist">
+                <a class="nav-item nav-link active" data-toggle="tab" href="#tab1" role="tab" aria-controls="public" aria-expanded="true">Recursos e Infraestructura</a>
+                <a class="nav-item nav-link" href="#tab2" role="tab" data-toggle="tab">Gestión Territorial</a>
+                <a class="nav-item nav-link" href="#tab3" role="tab" data-toggle="tab">Usos del Suelo</a>
+                <a class="nav-item nav-link" href="#tab4" role="tab" data-toggle="tab">Capas Hídricas</a>
+                <a class="nav-item nav-link" href="#tab5" role="tab" data-toggle="tab">Humedales</a>
+                <a class="nav-item nav-link" href="#tab6" role="tab" data-toggle="tab">Glaciares</a>
+                <a class="nav-item nav-link" href="#tab7" role="tab" data-toggle="tab">Requisitos BIP</a>
+                <a class="nav-item nav-link" href="#tab8" role="tab" data-toggle="tab">powerbi</a>
+                <a class="nav-item nav-link" href="#tab9" role="tab" data-toggle="tab">powerbi1</a>
+                <a class="nav-item nav-link" href="#tab10" role="tab" data-toggle="tab">powerbi2</a>
+                <a class="nav-item nav-link" href="#tab11" role="tab" data-toggle="tab">powerbi3</a>
+                <a class="nav-item nav-link" href="#tab12" role="tab" data-toggle="tab">test1</a>
+                <a class="nav-item nav-link" href="#tab13" role="tab" data-toggle="tab">La Serena</a>
+                <a class="nav-item nav-link" href="#tab14" role="tab" data-toggle="tab">Títulos de Merced</a>
+                <a class="nav-item nav-link" href="#tab15" role="tab" data-toggle="tab">Contact</a>
+                <a class="nav-item nav-link" href="#tab16" role="tab" data-toggle="tab">Disabled</a>
+                <a class="nav-item nav-link" href="#tab16" role="tab" data-toggle="tab">Disabled1</a>
+                <a class="nav-item nav-link" href="#tab16" role="tab" data-toggle="tab">  </a>
+              </nav>
+            </div>
+            
+        </div>
+        </div>
+      </div>
+    </div>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1" tabindex="0"> 
+          <div class="container-fluid p-0">
+            <div class="row">
+                <div class="col-12 iframes"> 
+                    <iframe loading="lazy" class="responsive-iframe" src="https://sud-austral.github.io/MAPA_RELEASE/publicaciones2/recursoseinfraestructura/Index.html?CUT_COM=10103" title="mapa" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2" tabindex="0">
+          <div class="container-fluid p-0">
+            <div class="row">
+                <div class="col-12 iframes"> 
+                    <iframe loading="lazy" class="responsive-iframe" src="https://sud-austral.github.io/MAPA_RELEASE/publicaciones2/osm/Index.html?CUT_COM=10103" title="mapa" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3" tabindex="0">
+          <div class="container-fluid p-0">
+            <div class="row">
+                <div class="col-12 iframes"> 
+                    <iframe loading="lazy" class="responsive-iframe" src="https://sud-austral.github.io/MAPA_RELEASE/publicaciones2/usodelsuelo/Index.html?CUT_COM=10103" title="mapa" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="tab4" role="tabpanel" aria-labelledby="tab4" tabindex="0">
+          <div class="container-fluid p-0">
+            <div class="row">
+                <div class="col-12 iframes"> 
+                    <iframe loading="lazy" class="responsive-iframe" src="https://sud-austral.github.io/MAPA_RELEASE/publicaciones2/agua/Index.html?CUT_COM=10103" title="mapa" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="tab5" role="tabpanel" aria-labelledby="tab5" tabindex="0">
+          <div class="container-fluid p-0">
+            <div class="row">
+                <div class="col-12 iframes"> 
+                    <iframe loading="lazy" class="responsive-iframe" src="https://sud-austral.github.io/MAPA_RELEASE/publicaciones2/humedales/Index.html?CUT_COM=10103" title="mapa" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="tab6" role="tabpanel" aria-labelledby="tab6" tabindex="0">
+          <div class="container-fluid p-0">
+            <div class="row">
+                <div class="col-12 iframes"> 
+                    <iframe loading="lazy" class="responsive-iframe" src="https://sud-austral.github.io/MAPA_RELEASE/publicaciones2/glaciares/Index.html?CUT_COM=10103" title="mapa" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="tab7" role="tabpanel" aria-labelledby="tab7" tabindex="0">
+          <div class="container-fluid p-0">
+            <div class="row">
+                <div class="col-12 iframes"> 
+                    <iframe loading="lazy" class="responsive-iframe" src="https://sud-austral.github.io/MAPA_RELEASE/publicaciones2/bip/Index.html?CUT_COM=10103" title="mapa" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+          </div>
+         
+        </div>
+        <div class="tab-pane fade" id="tab8" role="tabpanel" aria-labelledby="tab8" tabindex="0">
+          <div class="container-fluid p-0">
+            <div class="row">
+                <div class="col-12 iframes"> 
+                    <iframe loading="lazy" class="responsive-iframe" src="https://app.powerbi.com/view?r=eyJrIjoiYTQ2ZDAwZjgtMjkxOC00YzhhLTljNGQtZGZiMzJkMTBjMjk5IiwidCI6IjhmYmFhNWJmLTJlY2MtNGRjOC1iNTZiLThmOTJlMzA3ZjA3NiIsImMiOjR9" title="mapa" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+          </div>
+          
+        </div>
+        <div class="tab-pane fade" id="tab9" role="tabpanel" aria-labelledby="tab9" tabindex="0">
+          <div class="container-fluid p-0">
+            <div class="row">
+                <div class="col-12 iframes"> 
+                    <iframe loading="lazy" class="responsive-iframe" src="https://app.powerbi.com/view?r=eyJrIjoiMDAwNmFiNGMtNDY1OS00MWMzLTk1NjMtOTVhZjMzODVkOTdlIiwidCI6IjhmYmFhNWJmLTJlY2MtNGRjOC1iNTZiLThmOTJlMzA3ZjA3NiIsImMiOjR9" title="mapa" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="tab10" role="tabpanel" aria-labelledby="tab10" tabindex="0">
+          <div class="container-fluid p-0">
+            <div class="row">
+                <div class="col-12 iframes"> 
+                    <iframe loading="lazy" class="responsive-iframe" src="https://app.powerbi.com/view?r=eyJrIjoiMWE5ZGIyY2YtYWY3NS00NWI2LWJkNTQtZTc0MjZkZWRkZmYwIiwidCI6IjhmYmFhNWJmLTJlY2MtNGRjOC1iNTZiLThmOTJlMzA3ZjA3NiIsImMiOjR9&pageName=ReportSection69d8522aa17783d88e04" title="mapa" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="tab11" role="tabpanel" aria-labelledby="tab11" tabindex="0">
+          <div class="container-fluid p-0">
+            <div class="row">
+                <div class="col-12 iframes"> 
+                    <iframe loading="lazy" class="responsive-iframe" src="https://app.powerbi.com/view?r=eyJrIjoiOTdiNzI1ZjktZWM4MS00ODNiLTg3YmMtZDg1NzQ4ZmQ3MTM2IiwidCI6IjhmYmFhNWJmLTJlY2MtNGRjOC1iNTZiLThmOTJlMzA3ZjA3NiIsImMiOjR9&pageName=ReportSection" title="mapa" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="test1" role="tabpanel" aria-labelledby="test1" tabindex="0">
+          <div class="container-fluid p-0">
+            <div class="row">
+                <div class="col-12 iframes"> 
+                    <iframe loading="lazy" class="responsive-iframe" src="https://sud-austral.github.io/MAPA_RELEASE/publicaciones2/recursoseinfraestructura/Index.html?CUT_COM=10103" title="mapa" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid p-0 bg-black">
+      <footer class="d-flex flex-wrap justify-content-center align-items-center py-5 p-5">
+        <p class="col-md-3 mb-0 text-muted">© 2022 Copyright: di.dataintelligence-group.com</p>
+        <p class="col-md-4 mb-0 text-muted border-start text-start" style="padding-left:20px;">Este sitio ha sido desarrollado por Data Intelligence International utilizando las bases de datos publicadas por los distintos ministerios. Se incorporó la información publicada del censo de 2017, SII y del INE. 
+        </p>
+        <a href="/" class="col-md-5 d-flex justify-content-end">
+            <img class="img-fluid w-50 p-3" src="/assets/cochamo/logodataintelligence.png" alt="logo dataintelligence">
+        </a>
+      </footer>
+    </div>   
+    <script src="/scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+  </body>
+</html>
