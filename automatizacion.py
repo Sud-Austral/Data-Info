@@ -24,6 +24,12 @@ def main():
         print(1,i)
         #copy_tree(fr"{os.getcwd()}/luis/bases/main", fr"{os.getcwd()}/publicaciones2/{j['nombre']}")
         copy_tree("base",f"publicaciones2/{j['nombre']}")
+        f = open (f"publicaciones2/{j['nombre']}/index.html",'r')
+        contenido = f.read()
+        f.close()
+        with open(f"publicaciones2/{j['nombre']}/index.html", 'w', encoding='utf-8') as file:
+            file.write(contenido.replace("***comuna***",j["titulo"]))
+        #***comuna***
     return
 
 if __name__ == '__main__':
