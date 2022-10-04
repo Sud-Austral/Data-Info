@@ -19,9 +19,9 @@ def main():
     except:
         pass
 
-    df = pd.read_excel("comunas_origen.xlsx")
+    df = pd.read_excel("comunas_origen.xlsx", sheet_name="comunas")
     for i,j in df.iterrows():
-        print(1,i)
+        print(j["titulo"])
         #copy_tree(fr"{os.getcwd()}/luis/bases/main", fr"{os.getcwd()}/publicaciones2/{j['nombre']}")
         copy_tree("base",f"publicaciones2/{j['nombre']}")
         f = open (f"publicaciones2/{j['nombre']}/index.html",'r')
@@ -29,7 +29,12 @@ def main():
         f.close()
         with open(f"publicaciones2/{j['nombre']}/index.html", 'w', encoding='utf-8') as file:
             file.write(contenido.replace("***comuna***",j["titulo"]))
+
+        detalle = pd.read_excel("comunas_origen.xlsx", sheet_name=j['nombre'])
+        for n,k in detalle.iterrows():
+            print(k["vista"],k["id_comuna"])
         #***comuna***
+
     return
 
 if __name__ == '__main__':
