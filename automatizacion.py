@@ -23,7 +23,7 @@ def main():
     for i,j in df.iterrows():
         print(1,i)
         #copy_tree(fr"{os.getcwd()}/luis/bases/main", fr"{os.getcwd()}/publicaciones2/{j['nombre']}")
-        copy_tree("main",f"publicaciones2/{j['nombre']}")
+        copy_tree("base",f"publicaciones2/{j['nombre']}")
     return
 
 if __name__ == '__main__':
