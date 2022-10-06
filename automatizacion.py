@@ -34,7 +34,10 @@ def main():
         detalle = pd.read_excel("comunas_origen.xlsx", sheet_name=j['nombre'])
         for n,k in detalle.iterrows():
             print(k["vista"],k["id_comuna"])
-            shutil.copy("base/base_vista.html", f"publicaciones2/{j['nombre']}/{k['vista_id']}")
+            try:
+                shutil.copy("base/base_vista.html", f"publicaciones2/{j['nombre']}/{k['vista_id']}")
+            except:
+                pass
             try:
                 
                 if(k["portada"] == 1):
