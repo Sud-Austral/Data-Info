@@ -43,12 +43,13 @@ def main():
                     f.close()
                     print("leyo")
                     with open(f"publicaciones2/{j['nombre']}/index.html", 'w', encoding='utf-8') as file:
-                        #contenido = contenido.replace("***VISTAPORTADA***",j["vista_id"])
+                        contenido = contenido.replace("***VISTAPORTADA***",k["vista_id"])
                         print("cambio")
-                        #file.write(contenido)
+                        file.write(contenido)
                     print("termino")
             except Exception as e:
                 print("Error" + str(e))
+        break
 
         #***comuna***
 
