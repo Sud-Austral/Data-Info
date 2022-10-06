@@ -47,8 +47,8 @@ def main():
                         print("cambio")
                         file.write(contenido)
                     print("termino")
-            except:
-                print("Error")
+            except Exception as e:
+                print("Error" + str(e))
 
         #***comuna***
 
