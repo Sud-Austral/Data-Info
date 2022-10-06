@@ -35,8 +35,12 @@ def main():
         for n,k in detalle.iterrows():
             print(k["vista"],k["id_comuna"])
             try:
-                print(k["portada"] + 1)
+                
                 if(k["portada"] == 1):
+                    print("entro")
+                    f = open (f"publicaciones2/{j['nombre']}/index.html",'r')
+                    contenido = f.read()
+                    f.close()
                     with open(f"publicaciones2/{j['nombre']}/index.html", 'w', encoding='utf-8') as file:
                         contenido = contenido.replace("***VISTAPORTADA***",j["vista_id"])
                         file.write(contenido)
