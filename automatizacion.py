@@ -41,9 +41,12 @@ def main():
                     f = open (f"publicaciones2/{j['nombre']}/index.html",'r')
                     contenido = f.read()
                     f.close()
+                    print("leyo")
                     with open(f"publicaciones2/{j['nombre']}/index.html", 'w', encoding='utf-8') as file:
                         contenido = contenido.replace("***VISTAPORTADA***",j["vista_id"])
+                        print("cambio")
                         file.write(contenido)
+                    print("termino")
             except:
                 print("Error")
 
