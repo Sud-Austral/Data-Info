@@ -35,7 +35,7 @@ def main():
         for n,k in detalle.iterrows():
             print(k["vista"],k["id_comuna"])
             try:
-                shutil.copy("base/base_vista.html", f"publicaciones2/{j['nombre']}/{k['vista_id']}")
+                shutil.copy("base/base_vista.html", f"publicaciones2/{j['nombre']}/{k['vista_id']}.html")
             except:
                 pass
             try:
@@ -47,7 +47,7 @@ def main():
                     f.close()
                     print("leyo")
                     with open(f"publicaciones2/{j['nombre']}/index.html", 'w', encoding='utf-8') as file:
-                        contenido = contenido.replace("***VISTAPORTADA***",k["vista_id"])
+                        contenido = contenido.replace("***VISTAPORTADA***",k["vista_id"] + ".html")
                         print("cambio")
                         file.write(contenido)
                     print("termino")
