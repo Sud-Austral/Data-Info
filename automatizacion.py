@@ -49,7 +49,6 @@ def main():
                     print("termino")
             except Exception as e:
                 print("Error" + str(e))
-        break
 
         #***comuna***
 
