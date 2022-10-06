@@ -32,8 +32,26 @@ def main():
             file.write(contenido)
 
         detalle = pd.read_excel("comunas_origen.xlsx", sheet_name=j['nombre'])
+        htmlLi1 = ""
+        """
+        htmlLi1 = '<li class="nav-item" role="presentation" >' + \
+                   '<a href="./{}.html"> <button style="width: 100%!important; color:black" class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">'+ \
+                   'Gestión Territorial'+ \
+                   '</button></a></li>'
+        """
         for n,k in detalle.iterrows():
             print(k["vista"],k["id_comuna"])
+            vista_id = k['vista_id']
+            vista_nombre = k['nombre']
+            try:
+                htmlAux = f"""<li class="nav-item" role="presentation" >
+                            <a href="./{vista_id}.html"> <button style="width: 100%!important; color:black" class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">
+                            {vista_nombre}
+                            </button></a></li>"""
+                htmlLi1 = htmlLi1 + htmlAux
+            except:
+                pass
+            
             try:
                 shutil.copy("base/base_vista.html", f"publicaciones2/{j['nombre']}/{k['vista_id']}.html")
             except:
