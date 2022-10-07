@@ -84,8 +84,19 @@ def main():
                     print("termino")
             except Exception as e:
                 print("Error" + str(e))
+        f = open (f"publicaciones2/{j['nombre']}/base_vista.html",'r')
+        contenido = f.read()
+        f.close()
+        for n,k in detalle.iterrows():
+            vista_id = k['vista_id']
+            vista_nombre = k['nombre']
+            htmlFinal = contenido \
+                        .replace("***LI1***",htmlAux1) \
+                        .replace("***LI2***",htmlAux2)
+                
+            with open(f"publicaciones2/{j['nombre']}/{vista_id}.html", 'w', encoding='utf-8') as file:
+                file.write(htmlFinal)
 
-        #for n,k in detalle.iterrows():
 
 
         #***comuna***
