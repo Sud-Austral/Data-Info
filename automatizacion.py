@@ -57,7 +57,7 @@ def main():
                 htmlLi1 = htmlLi1 + htmlAux1
                 print(htmlLi1)
                 htmlAux2 = f"""<li class="nav-item" role="presentation" style="background:#C0CBD1;" >
-                            <a href="/{vista_id}.html"><button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">
+                            <a href="./{vista_id}.html"><button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">
                                 {vista_nombre}
                             </button>
                             </a></li> """
