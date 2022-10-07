@@ -50,8 +50,8 @@ def main():
             vista_id = k['vista_id']
             vista_nombre = k['nombre']
             try:
-                htmlAux1 = f"""<li class="nav-item" role="presentation" >
-                            <a href="./{vista_id}.html"> <button style="width: 100%!important; color:black" class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">
+                htmlAux1 = f"""<li class="nav-item" role="presentation" style="width: inherit;">
+                            <a href="./{vista_id}.html"> <button style="width: 100%!important; color:black" class="nav-link active" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">
                             {vista_nombre}
                             </button></a></li>"""
                 htmlLi1 = htmlLi1 + htmlAux1
