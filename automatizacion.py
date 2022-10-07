@@ -30,7 +30,6 @@ def main():
         with open(f"publicaciones2/{j['nombre']}/index.html", 'w', encoding='utf-8') as file:
             contenido = contenido.replace("***comuna***",j["titulo"])
             file.write(contenido)
-
         detalle = pd.read_excel("comunas_origen.xlsx", sheet_name=j['nombre'])
         htmlLi1 = ""
         htmlLi2 = ""
@@ -91,8 +90,8 @@ def main():
             vista_id = k['vista_id']
             vista_nombre = k['nombre']
             htmlFinal = contenido \
-                        .replace("***LI1***",htmlAux1) \
-                        .replace("***LI2***",htmlAux2)
+                        .replace("***LI1***",htmlLi1) \
+                        .replace("***LI2***",htmlLi2)
                 
             with open(f"publicaciones2/{j['nombre']}/{vista_id}.html", 'w', encoding='utf-8') as file:
                 file.write(htmlFinal)
