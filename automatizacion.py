@@ -70,8 +70,7 @@ def main():
                 shutil.copy("base/base_vista.html", f"publicaciones2/{j['nombre']}/{k['vista_id']}.html")
             except:
                 pass
-            try:
-                
+            try:                
                 if(k["portada"] == 1):
                     print("entro")
                     f = open (f"publicaciones2/{j['nombre']}/index.html",'r')
@@ -85,6 +84,9 @@ def main():
                     print("termino")
             except Exception as e:
                 print("Error" + str(e))
+
+        #for n,k in detalle.iterrows():
+
 
         #***comuna***
 
