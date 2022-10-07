@@ -64,12 +64,11 @@ def main():
                             </a></li> """
                 htmlLi2 = htmlLi2 + htmlAux2
             except:
-                pass
-            
-            try:
-                shutil.copy("base/base_vista.html", f"publicaciones2/{j['nombre']}/{k['vista_id']}.html")
-            except:
-                pass
+                pass            
+            #try:
+            #    shutil.copy("base/base_vista.html", f"publicaciones2/{j['nombre']}/{k['vista_id']}.html")
+            #except:
+            #    pass
             try:                
                 if(k["portada"] == 1):
                     print("entro")
@@ -84,7 +83,8 @@ def main():
                     print("termino")
             except Exception as e:
                 print("Error" + str(e))
-        f = open (f"publicaciones2/{j['nombre']}/base_vista.html",'r')
+        #f = open (f"publicaciones2/{j['nombre']}/base_vista.html",'r')
+        f = open (f"base/base_vista.html",'r')
         contenido = f.read()
         f.close()
         for n,k in detalle.iterrows():
