@@ -20,7 +20,7 @@ def main():
 
     df = pd.read_excel("comunas_origen.xlsx", sheet_name="comunas")
     for i,j in df.iterrows():
-        comunaNombre = j["titulo"]
+        comunaNombre = j["nombre"]
         #copy_tree(fr"{os.getcwd()}/luis/bases/main", fr"{os.getcwd()}/publicaciones2/{j['nombre']}")
         copy_tree("base",f"publicaciones2/{j['nombre']}")
         f = open (f"publicaciones2/{j['nombre']}/index.html",'r')
