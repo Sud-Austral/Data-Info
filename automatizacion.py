@@ -95,12 +95,16 @@ def main():
         contenido = f.read()
         f.close()
         for n,k in detalle.iterrows():
-
-            vista_id = k['vista_id']
-            vista_nombre = k['nombre']
-            htmlFinal = contenido \
-                        .replace("***LI1***",htmlLi1) \
-                        .replace("***LI2***",htmlLi2)
+            try:
+                iframeLink = k["iframeLink"]
+                vista_id = k['vista_id']
+                vista_nombre = k['nombre']
+                htmlFinal = contenido \
+                            .replace("***LI1***",htmlLi1) \
+                            .replace("***LI2***",htmlLi2) \
+                            .replace("***IFRAME***",iframeLink)
+            except:
+                pass
             htmlFinal = htmlFinal.replace(f"***{vista_id}***","active") 
             for ids in id_vista_li:
                 htmlFinal = htmlFinal.replace(f"***{ids}***","")
