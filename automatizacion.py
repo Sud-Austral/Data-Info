@@ -45,19 +45,21 @@ def main():
 
         
         """
+        id_vista_li = []
         for n,k in detalle.iterrows():
             print(k["vista"],k["id_comuna"])
             vista_id = k['vista_id']
             vista_nombre = k['nombre']
+            id_vista_li.append(vista_id)
             try:
                 htmlAux1 = f"""<li class="nav-item" role="presentation" style="width: inherit;">
-                            <a href="./{vista_id}.html"> <button style="width: 100%!important; color:black" class="nav-link active" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">
+                            <a href="./{vista_id}.html"> <button style="width: 100%!important; color:black" class="nav-link ***{vista_id}***" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">
                             {vista_nombre}
                             </button></a></li>"""
                 htmlLi1 = htmlLi1 + htmlAux1
                 print(htmlLi1)
                 htmlAux2 = f"""<li class="nav-item" role="presentation" style="background:#C0CBD1;" >
-                            <a href="./{vista_id}.html"><button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">
+                            <a href="./{vista_id}.html"><button class="nav-link ***{vista_id}***" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">
                                 {vista_nombre}
                             </button>
                             </a></li> """
@@ -87,11 +89,16 @@ def main():
         contenido = f.read()
         f.close()
         for n,k in detalle.iterrows():
+
             vista_id = k['vista_id']
             vista_nombre = k['nombre']
             htmlFinal = contenido \
                         .replace("***LI1***",htmlLi1) \
                         .replace("***LI2***",htmlLi2)
+            htmlFinal = htmlFinal.replace(f"***{vista_id}***","active") 
+            for ids in id_vista_li:
+                htmlFinal = htmlFinal.replace(f"***{ids}***","")
+            
                 
             with open(f"publicaciones2/{j['nombre']}/{vista_id}.html", 'w', encoding='utf-8') as file:
                 file.write(htmlFinal)
