@@ -32,7 +32,8 @@ def main():
         detalle = pd.read_excel("comunas_origen.xlsx", sheet_name=j['nombre'])
         try:
             shutil.copy(f"imagenes/portada_inicio/{comunaNombre}.png", f"publicaciones2/{j['nombre']}/assets/cochamo/portadainicio.jpg")
-        except:
+        except Exception as e:
+            print("Error" + str(e))
 
             print("Error en la imagen")
 
