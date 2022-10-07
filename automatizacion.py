@@ -13,7 +13,6 @@ def main():
         shutil.rmtree("publicaciones2")
     except:
         pass
-
     try:
         os.mkdir("publicaciones2")
     except:
@@ -21,7 +20,7 @@ def main():
 
     df = pd.read_excel("comunas_origen.xlsx", sheet_name="comunas")
     for i,j in df.iterrows():
-        print(j["titulo"])
+        comunaNombre = j["titulo"]
         #copy_tree(fr"{os.getcwd()}/luis/bases/main", fr"{os.getcwd()}/publicaciones2/{j['nombre']}")
         copy_tree("base",f"publicaciones2/{j['nombre']}")
         f = open (f"publicaciones2/{j['nombre']}/index.html",'r')
@@ -31,6 +30,11 @@ def main():
             contenido = contenido.replace("***comuna***",j["titulo"])
             file.write(contenido)
         detalle = pd.read_excel("comunas_origen.xlsx", sheet_name=j['nombre'])
+        try:
+            shutil.copy("imagenes/portada_inicio/{comunaNombre}.png", f"publicaciones2/{j['nombre']}/assets/cochamo/portadainicio.jpg")
+        except:
+            print("Error en la imagen")
+
         htmlLi1 = ""
         htmlLi2 = ""
         """
