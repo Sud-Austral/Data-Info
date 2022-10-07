@@ -31,8 +31,9 @@ def main():
             file.write(contenido)
         detalle = pd.read_excel("comunas_origen.xlsx", sheet_name=j['nombre'])
         try:
-            shutil.copy("imagenes/portada_inicio/{comunaNombre}.png", f"publicaciones2/{j['nombre']}/assets/cochamo/portadainicio.jpg")
+            shutil.copy(f"imagenes/portada_inicio/{comunaNombre}.png", f"publicaciones2/{j['nombre']}/assets/cochamo/portadainicio.jpg")
         except:
+
             print("Error en la imagen")
 
         htmlLi1 = ""
