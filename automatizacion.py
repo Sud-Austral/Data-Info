@@ -28,7 +28,7 @@ def main():
         f.close()
         with open(f"publicaciones2/{j['nombre']}/index.html", 'w', encoding='utf-8') as file:
             contenido = contenido.replace("***comuna***",j["titulo"]) \
-                                .replace("***COLORPORTADA***",j["fondo_portada"])
+                                .replace("***COLORPORTADA***",j["color_head"])
             file.write(contenido)
         detalle = pd.read_excel("comunas_origen.xlsx", sheet_name=j['nombre'])
         #*****************************
