@@ -45,8 +45,8 @@ def main():
             shutil.copy(f"imagenes/portada_inicio_3/{comunaNombre}.png"                 , f"{urlBase}portadainicio_texto3.png")
             shutil.copy(f"imagenes/portada_inicio_4/{comunaNombre}.png"                 , f"{urlBase}portadainicio_texto4.png")
         
-            shutil.copy(f"imagenes/vistas/interior_logoclick/{comunaNombre}.png"        , f"{urlBase}interior_iconomenu.png") 
-            shutil.copy(f"imagenes/vistas/interior_iconomenu/{comunaNombre}.png"        , f"{urlBase}portadainicio_texto4.png")
+            shutil.copy(f"imagenes/vistas/interior_logoclick/{comunaNombre}.png"        , f"{urlBase}portadainicio_texto4.png")
+            shutil.copy(f"imagenes/vistas/interior_iconomenu/{comunaNombre}.png"        , f"{urlBase}interior_iconomenu.png")    
         except Exception as e:
             print("Error" + str(e))
 
