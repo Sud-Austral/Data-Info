@@ -116,6 +116,7 @@ def main():
                             .replace("***IFRAME***",iframeLink) \
                             .replace("***COLORHEAD***",j["fondo_portada"]) \
                             .replace("***TITULO***",j["titulo"] + " - " + k["nombre"]) \
+                            .replace("***COLORSIDE***",j["color_head"])
                             
             except:
                 pass
