@@ -30,8 +30,19 @@ def main():
             contenido = contenido.replace("***comuna***",j["titulo"])
             file.write(contenido)
         detalle = pd.read_excel("comunas_origen.xlsx", sheet_name=j['nombre'])
+        #*****************************
+        #IMAGENES
+        #*****************************
         try:
-            shutil.copy(f"imagenes/portada_inicio/{comunaNombre}.png", f"publicaciones2/{j['nombre']}/assets/cochamo/portadainicio.jpg")
+            urlBase = f"publicaciones2/{j['nombre']}/assets/cochamo/"
+            shutil.copy(f"imagenes/portada_inicio/{comunaNombre}.png"           , f"{urlBase}portadainicio.jpg")
+            shutil.copy(f"imagenes/boton_entrar/{comunaNombre}.png"             , f"{urlBase}portadainicio_botonentrar.png")
+            shutil.copy(f"imagenes/logo_dataintelligence/{comunaNombre}.png"    , f"{urlBase}logodataintelligence.png")
+            shutil.copy(f"imagenes/logo_inicio/{comunaNombre}.png"              , f"{urlBase}portadainicio_logounclic.png")
+            shutil.copy(f"imagenes/portada_inicio_1/{comunaNombre}.png"         , f"{urlBase}portadainicio_texto1.png")
+            shutil.copy(f"imagenes/portada_inicio_2/{comunaNombre}.png"         , f"{urlBase}portadainicio_texto2.png")
+            shutil.copy(f"imagenes/portada_inicio_3/{comunaNombre}.png"         , f"{urlBase}portadainicio_texto3.png")
+            shutil.copy(f"imagenes/portada_inicio_4/{comunaNombre}.png"         , f"{urlBase}portadainicio_texto4.png")
         except Exception as e:
             print("Error" + str(e))
 
