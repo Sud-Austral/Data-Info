@@ -27,7 +27,8 @@ def main():
         contenido = f.read()
         f.close()
         with open(f"publicaciones2/{j['nombre']}/index.html", 'w', encoding='utf-8') as file:
-            contenido = contenido.replace("***comuna***",j["titulo"])
+            contenido = contenido.replace("***comuna***",j["titulo"]) \
+                                .replace("***COLORPORTADA***",j["fondo_portada"])
             file.write(contenido)
         detalle = pd.read_excel("comunas_origen.xlsx", sheet_name=j['nombre'])
         #*****************************
@@ -35,14 +36,17 @@ def main():
         #*****************************
         try:
             urlBase = f"publicaciones2/{j['nombre']}/assets/cochamo/"
-            shutil.copy(f"imagenes/portada_inicio/{comunaNombre}.png"           , f"{urlBase}portadainicio.jpg")
-            shutil.copy(f"imagenes/boton_entrar/{comunaNombre}.png"             , f"{urlBase}portadainicio_botonentrar.png")
-            shutil.copy(f"imagenes/logo_dataintelligence/{comunaNombre}.png"    , f"{urlBase}logodataintelligence.png")
-            shutil.copy(f"imagenes/logo_inicio/{comunaNombre}.png"              , f"{urlBase}portadainicio_logounclic.png")
-            shutil.copy(f"imagenes/portada_inicio_1/{comunaNombre}.png"         , f"{urlBase}portadainicio_texto1.png")
-            shutil.copy(f"imagenes/portada_inicio_2/{comunaNombre}.png"         , f"{urlBase}portadainicio_texto2.png")
-            shutil.copy(f"imagenes/portada_inicio_3/{comunaNombre}.png"         , f"{urlBase}portadainicio_texto3.png")
-            shutil.copy(f"imagenes/portada_inicio_4/{comunaNombre}.png"         , f"{urlBase}portadainicio_texto4.png")
+            shutil.copy(f"imagenes/portada_inicio/{comunaNombre}.png"                   , f"{urlBase}portadainicio.jpg")
+            shutil.copy(f"imagenes/boton_entrar/{comunaNombre}.png"                     , f"{urlBase}portadainicio_botonentrar.png")
+            shutil.copy(f"imagenes/logo_dataintelligence/{comunaNombre}.png"            , f"{urlBase}logodataintelligence.png")
+            shutil.copy(f"imagenes/logo_inicio/{comunaNombre}.png"                      , f"{urlBase}portadainicio_logounclic.png")
+            shutil.copy(f"imagenes/portada_inicio_1/{comunaNombre}.png"                 , f"{urlBase}portadainicio_texto1.png")
+            shutil.copy(f"imagenes/portada_inicio_2/{comunaNombre}.png"                 , f"{urlBase}portadainicio_texto2.png")
+            shutil.copy(f"imagenes/portada_inicio_3/{comunaNombre}.png"                 , f"{urlBase}portadainicio_texto3.png")
+            shutil.copy(f"imagenes/portada_inicio_4/{comunaNombre}.png"                 , f"{urlBase}portadainicio_texto4.png")
+        
+            shutil.copy(f"imagenes/vistas/interior_logoclick/{comunaNombre}.png"        , f"{urlBase}interior_iconomenu.png") 
+            shutil.copy(f"imagenes/vistas/interior_iconomenu/{comunaNombre}.png"        , f"{urlBase}portadainicio_texto4.png")
         except Exception as e:
             print("Error" + str(e))
 
