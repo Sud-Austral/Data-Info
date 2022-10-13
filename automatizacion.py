@@ -74,7 +74,6 @@ def main():
                             {vista_nombre}
                             </button></a></li>"""
                 htmlLi1 = htmlLi1 + htmlAux1
-                print(htmlLi1)
                 htmlAux2 = f"""<li class="nav-item" role="presentation" style="background:#C0CBD1;" >
                             <a href="./{vista_id}.html"><button class="nav-link ***{vista_id}***" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">
                                 {vista_nombre}
@@ -93,12 +92,9 @@ def main():
                     f = open (f"publicaciones2/{j['nombre']}/index.html",'r')
                     contenido = f.read()
                     f.close()
-                    print("leyo")
                     with open(f"publicaciones2/{j['nombre']}/index.html", 'w', encoding='utf-8') as file:
                         contenido = contenido.replace("***VISTAPORTADA***",k["vista_id"] + ".html")
-                        print("cambio")
                         file.write(contenido)
-                    print("termino")
             except Exception as e:
                 print("Error" + str(e))
         #f = open (f"publicaciones2/{j['nombre']}/base_vista.html",'r')
