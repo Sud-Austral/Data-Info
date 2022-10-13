@@ -114,7 +114,9 @@ def main():
                             .replace("***LI1***",htmlLi1) \
                             .replace("***LI2***",htmlLi2) \
                             .replace("***IFRAME***",iframeLink) \
-                            .replace("***COLORHEAD***",k["fondo_portada"])
+                            .replace("***COLORHEAD***",j["fondo_portada"]) \
+                            .replace("***TITULO***",j["titulo"] + " - " + k["nombre"]) \
+                            
             except:
                 pass
             htmlFinal = htmlFinal.replace(f"***{vista_id}***","active") 
