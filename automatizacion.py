@@ -68,7 +68,7 @@ def main():
         """
         id_vista_li = []
         for n,k in detalle.iterrows():
-            print(k["vista"],k["id_comuna"])
+            print(comunaNombre,k["vista"],k["id_comuna"])
             vista_id = k['vista_id']
             vista_nombre = k['nombre']
             id_vista_li.append(vista_id)
@@ -92,13 +92,13 @@ def main():
             #    pass
             try:                
                 if(k["portada"] == 1):
-                    print("entro")
                     f = open (f"publicaciones2/{j['nombre']}/index.html",'r')
                     contenido = f.read()
                     f.close()
                     with open(f"publicaciones2/{j['nombre']}/index.html", 'w', encoding='utf-8') as file:
                         contenido = contenido.replace("***VISTAPORTADA***",k["vista_id"] + ".html")
                         file.write(contenido)
+                    print("entro")
             except Exception as e:
                 print("Error" + str(e))
         #f = open (f"publicaciones2/{j['nombre']}/base_vista.html",'r')
